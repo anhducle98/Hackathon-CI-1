@@ -2,6 +2,10 @@ class Controllers {
   constructor(x, y, spriteName, group, target, configs) {
     this.sprite = group.create(x, y, 'assets', spriteName);
     this.sprite.anchor.setTo(0.5, 0.5);
+    //let radius = Math.max(this.sprite.width, this.sprite.height) / 2;
+    let radius = (this.sprite.width + this.sprite.height) / 4;
+    this.sprite.body.setCircle(radius, 0, 0);
+    this.velocity = new Phaser.Point(0, 0);
     // this.sprite.body.collideWorldBounds = true;
 
     this.configs = configs;
@@ -10,14 +14,14 @@ class Controllers {
 
   update(shift) {
     var direction = new Phaser.Point(
-      this.target.x - this.sprite.position.x,
-      this.target.y - this.sprite.position.y
+      this.target.x - this.sprite.x,
+      this.target.y - this.sprite.y
     );
 
     var currentAngle = Nakama.game.math.radToDeg(
       Nakama.game.math.angleBetween(
         0, 0,
-        this.sprite.body.velocity.x, this.sprite.body.velocity.y
+        this.velocity.x, this.velocity.y
       )
     );
 
@@ -43,12 +47,15 @@ class Controllers {
       Math.sin(Nakama.game.math.degToRad(newAngle))
     );
 
-    this.sprite.body.velocity = newDirection.setMagnitude(this.configs.speed);
+    this.velocity = newDirection.setMagnitude(this.configs.speed);
     this.sprite.angle = Math.atan2(newDirection.x, -newDirection.y) * (180 / Math.PI);
 
+    this.sprite.x += this.velocity.x;
+    this.sprite.y += this.velocity.y;
+
     if (shift != null) {
-      this.sprite.position.x += shift.x;
-      this.sprite.position.y += shift.y;
+      this.sprite.x += shift.x;
+      this.sprite.y += shift.y;
     }
   }
 }
