@@ -36,7 +36,7 @@
         <key>dataFormat</key>
         <string>phaser-json-array</string>
         <key>textureFileName</key>
-        <filename>assets.png</filename>
+        <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/assets.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -150,7 +150,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>assets.json</filename>
+                <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/assets.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -199,7 +199,7 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/19047302_1915948292011047_1249512024_o_09.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/19047302_1915948292011047_1249512024_o_09.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -212,7 +212,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/AirPlaneType1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/AirPlaneType1.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -225,7 +225,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/AirPlaneType2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/AirPlaneType2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -238,233 +238,8 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ButtonCup.png</key>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ButtonHome.png</key>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ButtonSetting.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>36,36,72,72</rect>
-                <key>scale9Paddings</key>
-                <rect>36,36,72,72</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ButtonMute.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,13,31,27</rect>
-                <key>scale9Paddings</key>
-                <rect>16,13,31,27</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ButtonPlay.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>53,53,106,107</rect>
-                <key>scale9Paddings</key>
-                <rect>53,53,106,107</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ButtonPlus.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>15,15,29,29</rect>
-                <key>scale9Paddings</key>
-                <rect>15,15,29,29</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ButtonStar.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,16,33,33</rect>
-                <key>scale9Paddings</key>
-                <rect>16,16,33,33</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ButtonStop.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>29,29,58,58</rect>
-                <key>scale9Paddings</key>
-                <rect>29,29,58,58</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/Cup.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,9,17,17</rect>
-                <key>scale9Paddings</key>
-                <rect>8,9,17,17</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/IconTime.png</key>
-            <key type="filename">Original Sprites/EnemyType4Base.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>17,17,34,34</rect>
-                <key>scale9Paddings</key>
-                <rect>17,17,34,34</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/ItemType1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>13,13,25,26</rect>
-                <key>scale9Paddings</key>
-                <rect>13,13,25,26</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/MissilesType3.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>7,8,13,16</rect>
-                <key>scale9Paddings</key>
-                <rect>7,8,13,16</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/MissliesType1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>6,7,11,15</rect>
-                <key>scale9Paddings</key>
-                <rect>6,7,11,15</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/MissliesType2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>7,6,15,12</rect>
-                <key>scale9Paddings</key>
-                <rect>7,6,15,12</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/NameGame.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>215,74,431,149</rect>
-                <key>scale9Paddings</key>
-                <rect>215,74,431,149</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/Rotate.png</key>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/Speed.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>16,16,32,32</rect>
-                <key>scale9Paddings</key>
-                <rect>16,16,32,32</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/Volum.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>8,12,15,23</rect>
-                <key>scale9Paddings</key>
-                <rect>8,12,15,23</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/WarningType1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>12,13,25,25</rect>
-                <key>scale9Paddings</key>
-                <rect>12,13,25,25</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">C:/Users/Covobon/Desktop/Assetes/WarningType2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>12,12,25,25</rect>
-                <key>scale9Paddings</key>
-                <rect>12,12,25,25</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">Original Sprites/BossHealthBar.png</key>
-            <key type="filename">Original Sprites/BossHealthBarMask.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossHealthBar.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossHealthBarMask.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -477,7 +252,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BossHealthBarBG.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossHealthBarBG.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -490,7 +265,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BossType1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossType1.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -503,7 +278,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BossType1Wings.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossType1Wings.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -516,7 +291,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BottomArtwork.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BottomArtwork.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -529,7 +304,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BulletType1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType1.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -542,7 +317,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BulletType1Upgraded.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType1Upgraded.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -555,7 +330,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BulletType2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -568,7 +343,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BulletType2Propulsory.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType2Propulsory.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -581,7 +356,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BulletType2Upgraded.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType2Upgraded.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -594,8 +369,8 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/BulletType3.png</key>
-            <key type="filename">Original Sprites/BulletType3Upgraded.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType3Upgraded.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -608,7 +383,87 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/CollectibleStar.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonCup.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonHome.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonSetting.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>36,36,72,72</rect>
+                <key>scale9Paddings</key>
+                <rect>36,36,72,72</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonMute.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>16,13,31,27</rect>
+                <key>scale9Paddings</key>
+                <rect>16,13,31,27</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonPlay.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>53,53,106,107</rect>
+                <key>scale9Paddings</key>
+                <rect>53,53,106,107</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonPlus.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>15,15,29,29</rect>
+                <key>scale9Paddings</key>
+                <rect>15,15,29,29</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonStar.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>16,16,33,33</rect>
+                <key>scale9Paddings</key>
+                <rect>16,16,33,33</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonStop.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>29,29,58,58</rect>
+                <key>scale9Paddings</key>
+                <rect>29,29,58,58</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/CollectibleStar.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -621,9 +476,22 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/EnemyBulletType1.png</key>
-            <key type="filename">Original Sprites/EnemyBulletType2.png</key>
-            <key type="filename">Original Sprites/ShipType3Support.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Cup.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,9,17,17</rect>
+                <key>scale9Paddings</key>
+                <rect>8,9,17,17</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ShipType3Support.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -636,7 +504,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/EnemyBulletType3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType3.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -649,7 +517,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/EnemyBulletType3Origin.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType3Origin.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -662,7 +530,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/EnemyBulletType4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -675,7 +543,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/EnemyType1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType1.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -688,7 +556,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/EnemyType2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -701,7 +569,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/EnemyType3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType3.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -714,7 +582,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/EnemyType4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -727,7 +595,21 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Explode.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType4Base.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/IconTime.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>17,17,34,34</rect>
+                <key>scale9Paddings</key>
+                <rect>17,17,34,34</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Explode.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -740,7 +622,72 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/PauseButton.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ItemType1.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>13,13,25,26</rect>
+                <key>scale9Paddings</key>
+                <rect>13,13,25,26</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/MissileType1.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>5,7,9,15</rect>
+                <key>scale9Paddings</key>
+                <rect>5,7,9,15</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/MissileType2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,5,15,10</rect>
+                <key>scale9Paddings</key>
+                <rect>7,5,15,10</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/MissileType3.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,8,9,16</rect>
+                <key>scale9Paddings</key>
+                <rect>4,8,9,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/NameGame.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>215,74,431,149</rect>
+                <key>scale9Paddings</key>
+                <rect>215,74,431,149</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/PauseButton.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -753,8 +700,8 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/PlayerHealthBar.png</key>
-            <key type="filename">Original Sprites/PlayerHealthBarMask.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/PlayerHealthBar.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/PlayerHealthBarMask.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -767,7 +714,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/PlayerHealthBarBG.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/PlayerHealthBarBG.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -780,10 +727,10 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Propul-1-1.png</key>
-            <key type="filename">Original Sprites/Propul-1-2.png</key>
-            <key type="filename">Original Sprites/Propul-1-3.png</key>
-            <key type="filename">Original Sprites/Propul-1-4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-1-1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-1-2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-1-3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-1-4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -796,10 +743,10 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Propul-2D-1.png</key>
-            <key type="filename">Original Sprites/Propul-2D-2.png</key>
-            <key type="filename">Original Sprites/Propul-2D-3.png</key>
-            <key type="filename">Original Sprites/Propul-2D-4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2D-1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2D-2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2D-3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2D-4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -812,14 +759,14 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Propul-2L-1.png</key>
-            <key type="filename">Original Sprites/Propul-2L-2.png</key>
-            <key type="filename">Original Sprites/Propul-2L-3.png</key>
-            <key type="filename">Original Sprites/Propul-2L-4.png</key>
-            <key type="filename">Original Sprites/Propul-2R-1.png</key>
-            <key type="filename">Original Sprites/Propul-2R-2.png</key>
-            <key type="filename">Original Sprites/Propul-2R-3.png</key>
-            <key type="filename">Original Sprites/Propul-2R-4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2L-1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2L-2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2L-3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2L-4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2R-1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2R-2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2R-3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2R-4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -832,18 +779,18 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Propul-3D-1.png</key>
-            <key type="filename">Original Sprites/Propul-3D-2.png</key>
-            <key type="filename">Original Sprites/Propul-3D-3.png</key>
-            <key type="filename">Original Sprites/Propul-3D-4.png</key>
-            <key type="filename">Original Sprites/Propul-3L-1.png</key>
-            <key type="filename">Original Sprites/Propul-3L-2.png</key>
-            <key type="filename">Original Sprites/Propul-3L-3.png</key>
-            <key type="filename">Original Sprites/Propul-3L-4.png</key>
-            <key type="filename">Original Sprites/Propul-3R-1.png</key>
-            <key type="filename">Original Sprites/Propul-3R-2.png</key>
-            <key type="filename">Original Sprites/Propul-3R-3.png</key>
-            <key type="filename">Original Sprites/Propul-3R-4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3D-1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3D-2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3D-3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3D-4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3L-1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3L-2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3L-3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3L-4.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3R-1.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3R-2.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3R-3.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3R-4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -856,7 +803,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/ReadyButton.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ReadyButton.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -869,7 +816,21 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Shield.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Rotate.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Speed.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>16,16,32,32</rect>
+                <key>scale9Paddings</key>
+                <rect>16,16,32,32</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Shield.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -882,12 +843,12 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Spaceship1-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship1-Player.png</key>
-            <key type="filename">Original Sprites/Spaceship1Left-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship1Left-Player.png</key>
-            <key type="filename">Original Sprites/Spaceship1Right-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship1Right-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1Left-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1Left-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1Right-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1Right-Player.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -900,8 +861,8 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Spaceship2-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship2-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2-Player.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -914,10 +875,10 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Spaceship2Left-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship2Left-Player.png</key>
-            <key type="filename">Original Sprites/Spaceship2Right-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship2Right-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2Left-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2Left-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2Right-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2Right-Player.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -930,12 +891,12 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Original Sprites/Spaceship3-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship3-Player.png</key>
-            <key type="filename">Original Sprites/Spaceship3Left-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship3Left-Player.png</key>
-            <key type="filename">Original Sprites/Spaceship3Right-Partner.png</key>
-            <key type="filename">Original Sprites/Spaceship3Right-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3Left-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3Left-Player.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3Right-Partner.png</key>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3Right-Player.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -945,113 +906,152 @@
                 <rect>16,19,31,37</rect>
                 <key>scale9Paddings</key>
                 <rect>16,19,31,37</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Volum.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,12,15,23</rect>
+                <key>scale9Paddings</key>
+                <rect>8,12,15,23</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/WarningType1.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>12,13,25,25</rect>
+                <key>scale9Paddings</key>
+                <rect>12,13,25,25</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/WarningType2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>12,12,25,25</rect>
+                <key>scale9Paddings</key>
+                <rect>12,12,25,25</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>Original Sprites/Propul-3L-2.png</filename>
-            <filename>Original Sprites/Propul-3L-3.png</filename>
-            <filename>Original Sprites/Propul-3L-4.png</filename>
-            <filename>Original Sprites/Propul-3R-1.png</filename>
-            <filename>Original Sprites/Propul-3R-2.png</filename>
-            <filename>Original Sprites/Propul-3R-3.png</filename>
-            <filename>Original Sprites/Propul-3R-4.png</filename>
-            <filename>Original Sprites/ReadyButton.png</filename>
-            <filename>Original Sprites/Shield.png</filename>
-            <filename>Original Sprites/ShipType3Support.png</filename>
-            <filename>Original Sprites/Spaceship1Left-Partner.png</filename>
-            <filename>Original Sprites/Spaceship1Left-Player.png</filename>
-            <filename>Original Sprites/Spaceship1-Partner.png</filename>
-            <filename>Original Sprites/Spaceship1-Player.png</filename>
-            <filename>Original Sprites/Spaceship1Right-Partner.png</filename>
-            <filename>Original Sprites/Spaceship1Right-Player.png</filename>
-            <filename>Original Sprites/Spaceship2Left-Partner.png</filename>
-            <filename>Original Sprites/Spaceship2Left-Player.png</filename>
-            <filename>Original Sprites/Spaceship2-Partner.png</filename>
-            <filename>Original Sprites/Spaceship2-Player.png</filename>
-            <filename>Original Sprites/Spaceship2Right-Partner.png</filename>
-            <filename>Original Sprites/Spaceship2Right-Player.png</filename>
-            <filename>Original Sprites/Spaceship3Left-Partner.png</filename>
-            <filename>Original Sprites/Spaceship3Left-Player.png</filename>
-            <filename>Original Sprites/Spaceship3-Partner.png</filename>
-            <filename>Original Sprites/Spaceship3-Player.png</filename>
-            <filename>Original Sprites/Spaceship3Right-Partner.png</filename>
-            <filename>Original Sprites/Spaceship3Right-Player.png</filename>
-            <filename>Original Sprites/BossHealthBar.png</filename>
-            <filename>Original Sprites/BossHealthBarBG.png</filename>
-            <filename>Original Sprites/BossHealthBarMask.png</filename>
-            <filename>Original Sprites/BossType1.png</filename>
-            <filename>Original Sprites/BossType1Wings.png</filename>
-            <filename>Original Sprites/BottomArtwork.png</filename>
-            <filename>Original Sprites/BulletType1.png</filename>
-            <filename>Original Sprites/BulletType1Upgraded.png</filename>
-            <filename>Original Sprites/BulletType2.png</filename>
-            <filename>Original Sprites/BulletType2Propulsory.png</filename>
-            <filename>Original Sprites/BulletType2Upgraded.png</filename>
-            <filename>Original Sprites/BulletType3.png</filename>
-            <filename>Original Sprites/BulletType3Upgraded.png</filename>
-            <filename>Original Sprites/CollectibleStar.png</filename>
-            <filename>Original Sprites/EnemyBulletType1.png</filename>
-            <filename>Original Sprites/EnemyBulletType2.png</filename>
-            <filename>Original Sprites/EnemyBulletType3.png</filename>
-            <filename>Original Sprites/EnemyBulletType3Origin.png</filename>
-            <filename>Original Sprites/EnemyBulletType4.png</filename>
-            <filename>Original Sprites/EnemyType1.png</filename>
-            <filename>Original Sprites/EnemyType2.png</filename>
-            <filename>Original Sprites/EnemyType3.png</filename>
-            <filename>Original Sprites/EnemyType4.png</filename>
-            <filename>Original Sprites/EnemyType4Base.png</filename>
-            <filename>Original Sprites/Explode.png</filename>
-            <filename>Original Sprites/PauseButton.png</filename>
-            <filename>Original Sprites/PlayerHealthBar.png</filename>
-            <filename>Original Sprites/PlayerHealthBarBG.png</filename>
-            <filename>Original Sprites/PlayerHealthBarMask.png</filename>
-            <filename>Original Sprites/Propul-1-1.png</filename>
-            <filename>Original Sprites/Propul-1-2.png</filename>
-            <filename>Original Sprites/Propul-1-3.png</filename>
-            <filename>Original Sprites/Propul-1-4.png</filename>
-            <filename>Original Sprites/Propul-2D-1.png</filename>
-            <filename>Original Sprites/Propul-2D-2.png</filename>
-            <filename>Original Sprites/Propul-2D-3.png</filename>
-            <filename>Original Sprites/Propul-2D-4.png</filename>
-            <filename>Original Sprites/Propul-2L-1.png</filename>
-            <filename>Original Sprites/Propul-2L-2.png</filename>
-            <filename>Original Sprites/Propul-2L-3.png</filename>
-            <filename>Original Sprites/Propul-2L-4.png</filename>
-            <filename>Original Sprites/Propul-2R-1.png</filename>
-            <filename>Original Sprites/Propul-2R-2.png</filename>
-            <filename>Original Sprites/Propul-2R-3.png</filename>
-            <filename>Original Sprites/Propul-2R-4.png</filename>
-            <filename>Original Sprites/Propul-3D-1.png</filename>
-            <filename>Original Sprites/Propul-3D-2.png</filename>
-            <filename>Original Sprites/Propul-3D-3.png</filename>
-            <filename>Original Sprites/Propul-3D-4.png</filename>
-            <filename>Original Sprites/Propul-3L-1.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/AirPlaneType1.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/AirPlaneType2.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ButtonCup.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ButtonHome.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ButtonMute.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ButtonPlay.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ButtonPlus.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ButtonSetting.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ButtonStar.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ButtonStop.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/Cup.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/IconTime.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/ItemType1.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/MissilesType3.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/MissliesType1.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/MissliesType2.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/NameGame.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/Rotate.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/Speed.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/Volum.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/WarningType1.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/WarningType2.png</filename>
-            <filename>C:/Users/Covobon/Desktop/Assetes/19047302_1915948292011047_1249512024_o_09.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossHealthBarMask.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossType1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossType1Wings.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BottomArtwork.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType1Upgraded.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType2Propulsory.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType2Upgraded.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BulletType3Upgraded.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonCup.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonHome.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonMute.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonPlay.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonPlus.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonSetting.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonStar.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ButtonStop.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/CollectibleStar.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Cup.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType3Origin.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyBulletType4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/EnemyType4Base.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Explode.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/IconTime.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ItemType1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/NameGame.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/PauseButton.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/PlayerHealthBar.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/PlayerHealthBarBG.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/PlayerHealthBarMask.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-1-1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-1-2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-1-3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-1-4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2D-1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2D-2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2D-3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2D-4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2L-1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2L-2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2L-3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2L-4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2R-1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2R-2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2R-3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-2R-4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3D-1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3D-2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3D-3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3D-4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3L-1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3L-2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3L-3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3L-4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3R-1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3R-2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3R-3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Propul-3R-4.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ReadyButton.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Rotate.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Shield.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/ShipType3Support.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1Left-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1Left-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1Right-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship1Right-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2Left-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2Left-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2Right-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship2Right-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3Left-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3Left-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3Right-Partner.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Spaceship3Right-Player.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Speed.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/Volum.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/WarningType1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/WarningType2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/MissileType3.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/MissileType1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/MissileType2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/19047302_1915948292011047_1249512024_o_09.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/AirPlaneType1.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/AirPlaneType2.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossHealthBar.png</filename>
+            <filename>C:/Users/Covobon/Desktop/Hackathon-CI/Assets/Original Sprites/BossHealthBarBG.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
