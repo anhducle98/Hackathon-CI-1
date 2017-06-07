@@ -98,7 +98,7 @@
 },
 {
 	"filename": "BulletType2Propulsory.png",
-	"frame": {"x":910,"y":923,"w":10,"h":18},
+	"frame": {"x":849,"y":956,"w":10,"h":18},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":10,"h":18},
@@ -313,28 +313,28 @@
 	"sourceSize": {"w":50,"h":51}
 },
 {
-	"filename": "MissilesType3.png",
-	"frame": {"x":615,"y":408,"w":26,"h":32},
+	"filename": "MissileType1.png",
+	"frame": {"x":825,"y":401,"w":18,"h":29},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":32},
-	"sourceSize": {"w":26,"h":32}
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":29},
+	"sourceSize": {"w":18,"h":29}
 },
 {
-	"filename": "MissliesType1.png",
-	"frame": {"x":825,"y":406,"w":22,"h":29},
+	"filename": "MissileType2.png",
+	"frame": {"x":825,"y":380,"w":29,"h":19},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":29},
-	"sourceSize": {"w":22,"h":29}
+	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":19},
+	"sourceSize": {"w":29,"h":19}
 },
 {
-	"filename": "MissliesType2.png",
-	"frame": {"x":825,"y":380,"w":29,"h":24},
+	"filename": "MissileType3.png",
+	"frame": {"x":843,"y":532,"w":17,"h":32},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":24},
-	"sourceSize": {"w":29,"h":24}
+	"spriteSourceSize": {"x":0,"y":0,"w":17,"h":32},
+	"sourceSize": {"w":17,"h":32}
 },
 {
 	"filename": "NameGame.png",
@@ -346,7 +346,7 @@
 },
 {
 	"filename": "PauseButton.png",
-	"frame": {"x":739,"y":950,"w":26,"h":26},
+	"frame": {"x":615,"y":408,"w":26,"h":26},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":26},
@@ -394,7 +394,7 @@
 },
 {
 	"filename": "Propul-1-3.png",
-	"frame": {"x":767,"y":950,"w":12,"h":19},
+	"frame": {"x":835,"y":956,"w":12,"h":19},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":12,"h":19},
@@ -402,7 +402,7 @@
 },
 {
 	"filename": "Propul-1-4.png",
-	"frame": {"x":843,"y":532,"w":14,"h":22},
+	"frame": {"x":845,"y":401,"w":14,"h":22},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":22},
@@ -410,7 +410,7 @@
 },
 {
 	"filename": "Propul-2D-1.png",
-	"frame": {"x":856,"y":946,"w":40,"h":17},
+	"frame": {"x":793,"y":956,"w":40,"h":17},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":40,"h":17},
@@ -442,7 +442,7 @@
 },
 {
 	"filename": "Propul-2L-1.png",
-	"frame": {"x":781,"y":956,"w":40,"h":17},
+	"frame": {"x":856,"y":923,"w":40,"h":17},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":40,"h":17},
@@ -474,7 +474,7 @@
 },
 {
 	"filename": "Propul-2R-1.png",
-	"frame": {"x":898,"y":946,"w":40,"h":17},
+	"frame": {"x":898,"y":923,"w":40,"h":17},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":40,"h":17},
@@ -570,7 +570,7 @@
 },
 {
 	"filename": "Propul-3R-1.png",
-	"frame": {"x":856,"y":923,"w":52,"h":21},
+	"frame": {"x":739,"y":950,"w":52,"h":21},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":52,"h":21},
@@ -815,6 +815,6 @@
 	"format": "RGBA8888",
 	"size": {"w":943,"h":977},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:45f7a654acdd6a627b278337b23e2d43:238cb9d7cba3978f1d0adc70e7545e20:a759b6bbc8381ac9c472b28f589ad0d6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:3718d19886653f020ef915dae163ac91:55394f0a7e788e94b90add9cfbbf1430:a759b6bbc8381ac9c472b28f589ad0d6$"
 }
 }
