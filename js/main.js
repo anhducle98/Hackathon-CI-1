@@ -51,6 +51,8 @@ var create = function(){
 
   Nakama.player = new ShipController(Nakama.game.width/2, Nakama.game.height/2, {});
 
+  Nakama.missiles = [];
+
   Nakama.game.input.activePointer.x = -Nakama.game.width/2;
   Nakama.game.input.activePointer.y = Nakama.game.height/2;
 
