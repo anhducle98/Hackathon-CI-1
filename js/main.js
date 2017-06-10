@@ -5,7 +5,7 @@ Nakama.configs = {
         TURN_RATE: 200 // degree/frame
     },
     missile: {
-        SPEED: 12,
+        SPEED: 10,
         TURN_RATE: 130,
         COOLDOWN: 1,
         MAX_POPULATION: 5
@@ -16,7 +16,7 @@ Nakama.configs = {
 };
 
 window.onload = function(){
-    Nakama.game = new Phaser.Game(800,960,Phaser.AUTO,'',
+    Nakama.game = new Phaser.Game(1600,960,Phaser.AUTO,'',
     {
         preload: preload,
         create: create,
@@ -30,7 +30,7 @@ window.onload = function(){
 var preload = function(){
     Nakama.game.scale.minWidth = 400;
     Nakama.game.scale.minHeight = 480;
-    Nakama.game.scale.maxWidth = 800;
+    Nakama.game.scale.maxWidth = 1600;
     Nakama.game.scale.maxHeight = 960;
     Nakama.game.scale.pageAlignHorizontally = true;
     Nakama.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -96,6 +96,7 @@ var create = function(replay){
     );
 
     Nakama.missiles = [];
+    Nakama.killerMissiles = [];
 
     Nakama.game.input.activePointer.x = -Nakama.game.width/2;
     Nakama.game.input.activePointer.y = Nakama.game.height/2;
@@ -172,6 +173,14 @@ var update = function(){
                 Nakama.missiles.splice(i, 1);
             }
         }
+        for(var i = 0; i < Nakama.killerMissiles.length; i++) {
+            Nakama.killerMissiles[i].update(shift);
+
+            // if missile isn't alive then destroy it
+            if(!Nakama.killerMissiles[i].sprite.alive){
+                Nakama.killerMissiles.splice(i, 1);
+            }
+        }
 
         Nakama.background.tilePosition.x += shift.x;
         Nakama.background.tilePosition.y += shift.y;
@@ -195,6 +204,7 @@ var update = function(){
         Nakama.player.sprite.y = Nakama.game.height/2;
 
         generateMissiles();
+        generateKillerMissiles();
 
         Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.missileGroup, onMissileHitShip);
         Nakama.game.physics.arcade.overlap(Nakama.missileGroup, Nakama.missileGroup, onMissileHitMissile);
@@ -238,6 +248,7 @@ var generateItems = function() {
 
 // auto generate missiles
 var sinceLastMissile = 0;
+var sinceLastKillerMissile = 0;
 var generateMissiles = function() {
     sinceLastMissile += Nakama.game.time.physicsElapsed;
     if (sinceLastMissile < Nakama.configs.missile.COOLDOWN) return;
@@ -260,6 +271,23 @@ var generateMissiles = function() {
     Nakama.warningsContainer.putWarning(missile.sprite);
 }
 
+var generateKillerMissiles = function() {
+    sinceLastKillerMissile += Nakama.game.time.physicsElapsed;
+    if (sinceLastKillerMissile < Nakama.configs.missile.COOLDOWN * 10) return;
+    sinceLastKillerMissile = 0;
+    for (let it = 1; it <= 5; ++it) {
+        let deltaX = Math.random() * 600 - 300;
+        let deltaY = Math.random() * 600 - 300;
+        if (deltaX < 0) deltaX -= 600; else deltaX += 600;
+        if (deltaY < 0) deltaY -= 600; else deltaY += 600;
+        let x = Nakama.player.sprite.x + deltaX;
+        let y = Nakama.player.sprite.y + deltaY;
+        let missile = new KillerMissilesController(x, y, {WOBBLE_LIMIT: 0, WOBBLE_SPEED: 255});
+        Nakama.killerMissiles.push(missile);
+        Nakama.warningsContainer.putWarning(missile);
+    }
+}
+
 var playExplosionSound = function() {
     Nakama.explosionSound.play();
 }
@@ -278,22 +306,30 @@ var onMissileHitShip = function(ship, missile) {
         // game over
         var style1 = { font: "bold 50px Arial", fill: "black", boundsAlignH: "center", boundsAlignV: "middle" };
         var style2 = { font: "bold 32px Arial", fill: "black", boundsAlignH: "center", boundsAlignV: "middle" };
-        var totalScore = Nakama.starScore + Nakama.bonus + Nakama.countTime;
+        var totalScore = Nakama.starScore * 15 + Nakama.bonus + Nakama.countTime;
         var text = 'YOUR SCORE: ' + totalScore;
-        var prompt = Nakama.game.add.text(0, 0, text, style1);
-        prompt.setTextBounds(0, 100, 800, 100);
-        Nakama.game.add.sprite(300, 300, 'assets', 'IconTime.png');
-        Nakama.game.add.sprite(300, 400, 'assets', 'ButtonStar.png');
-        Nakama.game.add.text(410, 315, '+' + Nakama.countTime, style2);
-        Nakama.game.add.text(410, 415, '+' + Nakama.starScore, style2);
-        Nakama.game.add.text(300, 515, 'Bonus: +' + Nakama.bonus, style2);
+        Nakama.box = Nakama.game.add.group();
+        Nakama.box.addChild(Nakama.game.add.text(0, 0, text, style1));
+        Nakama.box.addChild(Nakama.game.add.sprite(80, 300, 'assets', 'IconTime.png'));
+        Nakama.box.addChild(Nakama.game.add.sprite(80, 400, 'assets', 'ButtonStar.png'));
+        Nakama.box.addChild(Nakama.game.add.text(250, 300, '+' + Nakama.countTime, style2));
+        Nakama.box.addChild(Nakama.game.add.text(250, 400, '+' + Nakama.starScore * 15, style2));
+        Nakama.box.addChild(Nakama.game.add.text(50, 500, 'Bonus:'), style2);
+        Nakama.box.addChild(Nakama.game.add.text(250, 500, '+' + Nakama.bonus, style2));
+
 
         if(localStorage.getItem('highscore') === null){
             localStorage.setItem('highscore', totalScore);
         }else if(totalScore > localStorage.getItem('highscore')){
             localStorage.setItem('highscore', totalScore);
         }
-        Nakama.game.add.text(280, 200, 'HIGHSCORE: ' + localStorage.getItem('highscore'), style2);
+        Nakama.box.addChild(Nakama.game.add.text(80, 100, 'HIGHSCORE: ' + localStorage.getItem('highscore'), style2));
+        let maxWidth = 0;
+        Nakama.box.forEach((text) => {text.update(); maxWidth = Math.max(maxWidth, text.width);});
+        Nakama.box.x = Nakama.game.width / 2 - maxWidth / 2;
+        Nakama.box.y = 100;
+        console.log(maxWidth);
+        console.log(Nakama.game.width);
         Nakama.replayButton.visible = true;
         Nakama.buttonpause.visible = false;
     }

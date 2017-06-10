@@ -1,14 +1,12 @@
 class Item {
 	constructor(x, y, spriteName) {
-		this.sprite = Nakama.itemGroup.getFirstDead();
-		if (this.sprite == null) {
-			this.sprite = Nakama.itemGroup.create(x, y, 'assets', spriteName);
-		} else {
-			this.sprite.x = x;
-			this.sprite.y = y;
-			this.sprite.loadTexture('assets', spriteName);
-			this.sprite.revive();
-		}
+		this.sprite = Nakama.itemGroup.create(x, y, 'assets', spriteName);
+		this.sprite.x = x;
+		this.sprite.y = y;
+		this.sprite.loadTexture('assets', spriteName);
+		this.sprite.revive();
+		this.sprite.visible = true;
+		
 		this.sprite.width /= 2;
         this.sprite.height /= 2;
         this.sprite.anchor.setTo(0.5, 0.5);
