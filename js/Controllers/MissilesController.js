@@ -1,12 +1,17 @@
 class MissilesController extends Controllers {
     constructor(x, y, configs) {
         if (!configs) configs = {};
-        super(x, y, 'MissileType3.png', Nakama.missileGroup, Nakama.player.sprite, Object.assign(
+        let missileType = 2;
+        if (configs.WOBBLE_LIMIT == 0) {
+            missileType = 3;
+        }
+        super(x, y, `MissileType${missileType}.png`, Nakama.missileGroup, Nakama.player.sprite, Object.assign(
             configs, {
                 speed: Nakama.configs.missile.SPEED,
                 turnRate: Nakama.configs.missile.TURN_RATE
             }
         ));
+
         this.sprite.scale.setTo(0.5, 0.5);
         this.sprite.itemType = "Missile";
         this.lastSmokeTime = 0;
@@ -16,39 +21,18 @@ class MissilesController extends Controllers {
             setTimeout(() => { tween.stop(); this.sprite.kill(); }, 1000);
         }
         ,15000);
-        /*
-    this.SMOKE_LIFETIME = 3000; // milliseconds
-        this.smokeEmitter = Nakama.game.add.emitter(0, 0, 100);
-        //Nakama.background.addChild(this.smokeEmitter);
-
-        // Set motion paramters for the emitted particles
-        this.smokeEmitter.gravity = 0;
-        this.smokeEmitter.setXSpeed(0, 0);
-        this.smokeEmitter.setYSpeed(0, 0); // make smoke drift upwards
-
-        // Make particles fade out after 1000ms
-        this.smokeEmitter.setAlpha(1, 0, this.SMOKE_LIFETIME,
-                Phaser.Easing.Linear.InOut);
-        this.smokeEmitter.makeParticles('smoke');
-        //this.smokeEmitter.start(false, this.SMOKE_LIFETIME, 50);
-        //this.smokeEmitter.fixedToCamera = true;
-        */
     }
 
     update(shift) {
+        let lastX = this.sprite.x;
+        let lastY = this.sprite.y;
         Controllers.prototype.update.call(this, shift);
+
         this.lastSmokeTime += Nakama.game.time.physicsElapsed;
-        if (this.lastSmokeTime <= 0.02) {
+        if (this.lastSmokeTime <= 0.03) {
             return;
         }
         this.lastSmokeTime = 0;
-        new Smoke(this.sprite.x, this.sprite.y);
-        /*
-        this.smokeEmitter.x = this.sprite.x;
-        this.smokeEmitter.y = this.sprite.y;
-        this.smokeEmitter.emitParticle()
-        //this.smokeEmitter.cameraOffset.x -= Nakama.player.velocity.x;
-        //this.smokeEmitter.cameraOffset.y -= Nakama.player.velocity.y;
-    */
+        new Smoke(lastX, lastY, this.sprite.angle);
     }
 }

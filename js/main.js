@@ -38,8 +38,8 @@ var preload = function(){
     Nakama.game.time.advancedTiming = true;
 
     Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
-    Nakama.game.load.image('smoke', 'Assets/smoke.png');
-    Nakama.game.load.image('background', 'Assets/background.png');
+    Nakama.game.load.image('smoke', 'Assets/rocket.png');
+    Nakama.game.load.image('background', 'Assets/backgroundNew.png');
     Nakama.game.load.image('namegame', 'Assets/Original Sprites/NameGame.png');
 
     Nakama.game.load.spritesheet('button', 'Assets/Original Sprites/ButtonPlay.png', 212, 213);
@@ -57,7 +57,6 @@ var preload = function(){
 
 // initialize the game
 var create = function(replay){
-
     music = Nakama.game.add.audio('AirPlaneType1');
     music.play();
     music.loopFull(1);
@@ -66,6 +65,7 @@ var create = function(replay){
 
     Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
     Nakama.background = Nakama.game.add.tileSprite(0, 0, Nakama.game.width, Nakama.game.height, 'background');
+    //Nakama.background.alpha = 0.95;
     Nakama.smokeGroup = Nakama.game.add.physicsGroup();
     Nakama.warningsGroup = Nakama.game.add.physicsGroup();
     Nakama.itemGroup = Nakama.game.add.physicsGroup();
@@ -73,7 +73,7 @@ var create = function(replay){
     Nakama.missileGroup = Nakama.game.add.physicsGroup();
     Nakama.explosionGroup = Nakama.game.add.physicsGroup();
 
-    Nakama.player = new ShipController(Nakama.game.width/2, Nakama.game.height/2, {});
+    Nakama.player = new ShipController(Nakama.game.width/2, Nakama.game.height/2, {WOBBLE_LIMIT: 0, WOBBLE_SPEED: 0});
 
     Nakama.health = Nakama.game.add.sprite(Nakama.game.width/2, Nakama.game.height/2, 'assets', 'Shield.png');
     Nakama.health.scale.setTo(0.7, 0.7);
@@ -83,7 +83,7 @@ var create = function(replay){
     Nakama.starScore = 0;
     Nakama.game.add.sprite(Nakama.game.width - 150, 10, 'assets', 'ButtonStar.png');
     Nakama.starScoreText = Nakama.game.add.text(
-        Nakama.game.width - 60, 20, Nakama.starScore,
+        Nakama.game.width - 60, 18, Nakama.starScore,
         { font: '34px Arial', fill: 'black', wordWrap: true, wordWrapWidth: 50 }
     );
     Nakama.bonus = 0;
@@ -91,7 +91,7 @@ var create = function(replay){
     Nakama.countTime = 0;
     Nakama.game.add.sprite(10, 10, 'assets', 'IconTime.png');
     Nakama.timeScore = Nakama.game.add.text(
-        90, 25, Nakama.countTime,
+        90, 18, Nakama.countTime,
         { font: '34px Arial', fill: 'black', wordWrap: true, wordWrapWidth: 50 }
     );
 
@@ -110,7 +110,7 @@ var create = function(replay){
     Nakama.buttonpause.width = 77;
     Nakama.buttonpause.height = 77;
     Nakama.buttonpause.anchor.setTo(0.5, 0.5);
-
+    Nakama.buttonpause.visible = false;
     Nakama.replayButton = Nakama.game.add.button(
         Nakama.game.world.centerX - 95, 700, 'button', replayOnclick, this
     );
@@ -139,14 +139,22 @@ var updateCounter = function() {
 function actionOnClick () {
     Nakama.checkPlay = true;
     Nakama.button.visible = false;
+    Nakama.buttonpause.visible = true;
     Nakama.name.visible = false;
     Nakama.timer.loop(Phaser.Timer.SECOND, updateCounter, this);
 }
 
 // update game state each frame
 var update = function(){
-    if (Nakama.checkPause) return;
-
+    if (Nakama.checkPause) {
+        Nakama.timer.pause();
+        return;
+    }
+    if (Nakama.player.sprite.alive) {
+        Nakama.timer.resume();
+    } else {
+        Nakama.timer.pause();
+    }
     if (Nakama.checkPlay) {
         if (Nakama.player.sprite.alive) {
             Nakama.player.update();
@@ -200,8 +208,9 @@ var update = function(){
 
 // before camera render (mostly for debug)
 var render = function() {
-    //Nakama.game.debug.body(Nakama.player.sprite);
     /*
+    Nakama.game.debug.body(Nakama.player.sprite);
+    
     Nakama.itemGroup.forEach((item) => {
         Nakama.game.debug.body(item);
     });
@@ -242,7 +251,11 @@ var generateMissiles = function() {
     if (deltaY < 0) deltaY -= 800; else deltaY += 800;
     let x = Nakama.player.sprite.x + deltaX;
     let y = Nakama.player.sprite.y + deltaY;
-    let missile = new MissilesController(x, y, {});
+
+    let limit = Math.random() * 5;
+    if (Math.random() < 0.5) limit = 0;
+    let missile = new MissilesController(x, y, {WOBBLE_LIMIT: limit, WOBBLE_SPEED: 255});
+
     Nakama.missiles.push(missile);
     Nakama.warningsContainer.putWarning(missile.sprite);
 }
@@ -338,9 +351,11 @@ var getExplosion = function(x, y) {
 
 var replayOnclick = function() {
     console.log("replayed");
+    Nakama.game.world.removeAll();
     create(true);
     Nakama.timer.resume();
     Nakama.replayButton.kill();
+    Nakama.buttonpause.visible = true;
 }
 
 var checkItem = function(item) {

@@ -19,6 +19,16 @@ class Controllers {
 
         this.configs = configs;
         this.target = target;
+
+        this.WOBBLE_LIMIT = configs.WOBBLE_LIMIT; // degrees
+        this.WOBBLE_SPEED = configs.WOBBLE_SPEED; // milliseconds
+        this.wobble = this.WOBBLE_LIMIT;
+        Nakama.game.add.tween(this)
+        .to(
+            { wobble: -this.WOBBLE_LIMIT },
+            this.WOBBLE_SPEED, Phaser.Easing.Sinusoidal.InOut, true, 0,
+            Number.POSITIVE_INFINITY, true
+        );
     }
 
     update(shift) {
@@ -51,6 +61,8 @@ class Controllers {
         if(delta < -maxDelta) delta = -maxDelta;
 
         var newAngle = currentAngle + delta;
+        newAngle += this.wobble;
+
         var newDirection = new Phaser.Point(
             Math.cos(Nakama.game.math.degToRad(newAngle)),
             Math.sin(Nakama.game.math.degToRad(newAngle))
