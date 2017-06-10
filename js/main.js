@@ -109,7 +109,7 @@ var create = function(replay){
     Nakama.buttonpause.width = 77;
     Nakama.buttonpause.height = 77;
     Nakama.buttonpause.anchor.setTo(0.5, 0.5);
-
+    Nakama.timer = Nakama.game.time.events;
     if (!(replay === true)){
         Nakama.button = Nakama.game.add.button(Nakama.game.world.centerX - 95, 700, 'button', actionOnClick, this)
         Nakama.checkPlay = false;
@@ -133,7 +133,6 @@ function actionOnClick () {
     Nakama.checkPlay = true;
     Nakama.button.visible = false;
     Nakama.name.visible = false;
-    Nakama.timer = Nakama.game.time.events;
     Nakama.timer.loop(Phaser.Timer.SECOND, updateCounter, this);
 }
 
@@ -338,8 +337,10 @@ var getExplosion = function(x, y) {
 }
 
 var replayOnclick = function() {
+    console.log("replayed");
     create(true);
-    Nakama.replayButton.inputEnabled = false;
+    Nakama.timer.resume();
+    Nakama.replayButton.kill();
 }
 
 var checkItem = function(item) {
