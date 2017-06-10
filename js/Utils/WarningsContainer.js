@@ -46,7 +46,7 @@ class WarningsContainer {
         for (let sprite of this.warnings) {
             let point = this.intersect(sprite);
             if (!sprite.item.alive) {
-                sprite.kill();
+                sprite.destroy();
                 continue;
             }
             if (point) {

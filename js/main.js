@@ -61,7 +61,8 @@ var create = function(replay){
     music = Nakama.game.add.audio('AirPlaneType1');
     music.play();
     music.loopFull(1);
-
+    Nakama.explosionSound = Nakama.game.add.audio('AirPlaneExplosive');
+    Nakama.getItemSound = Nakama.game.add.audio('GetItem');
 
     Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
     Nakama.background = Nakama.game.add.tileSprite(0, 0, Nakama.game.width, Nakama.game.height, 'background');
@@ -109,6 +110,12 @@ var create = function(replay){
     Nakama.buttonpause.width = 77;
     Nakama.buttonpause.height = 77;
     Nakama.buttonpause.anchor.setTo(0.5, 0.5);
+
+    Nakama.replayButton = Nakama.game.add.button(
+        Nakama.game.world.centerX - 95, 700, 'button', replayOnclick, this
+    );
+    Nakama.replayButton.visible = false;
+
     Nakama.timer = Nakama.game.time.events;
     if (!(replay === true)){
         Nakama.button = Nakama.game.add.button(Nakama.game.world.centerX - 95, 700, 'button', actionOnClick, this)
@@ -226,6 +233,7 @@ var generateMissiles = function() {
     sinceLastMissile += Nakama.game.time.physicsElapsed;
     if (sinceLastMissile < Nakama.configs.missile.COOLDOWN) return;
     sinceLastMissile = 0;
+    Nakama.missiles.filter((item) => (item.sprite.alive));
     if (Nakama.missiles.length >= Nakama.configs.missile.MAX_POPULATION) return;
 
     let deltaX = Math.random() * 300 - 150;
@@ -240,13 +248,11 @@ var generateMissiles = function() {
 }
 
 var playExplosionSound = function() {
-    let sound = Nakama.game.add.audio('AirPlaneExplosive');
-    sound.play();
+    Nakama.explosionSound.play();
 }
 
 var getItem = function() {
-    let sound = Nakama.game.add.audio('GetItem');
-    sound.play();
+    Nakama.getItemSound.play();
 }
 
 var onMissileHitShip = function(ship, missile) {
@@ -275,14 +281,8 @@ var onMissileHitShip = function(ship, missile) {
             localStorage.setItem('highscore', totalScore);
         }
         Nakama.game.add.text(280, 200, 'HIGHSCORE: ' + localStorage.getItem('highscore'), style2);
-
-        Nakama.replayButton = Nakama.game.add.button(
-            Nakama.game.world.centerX - 95, 700, 'button', replayOnclick, this
-        );
-
+        Nakama.replayButton.visible = true;
         Nakama.buttonpause.visible = false;
-
-        console.log('killed');
     }
     missile.kill();
     getExplosion(ship.body.x, ship.body.y);
@@ -290,6 +290,8 @@ var onMissileHitShip = function(ship, missile) {
 }
 
 var onMissileHitMissile = function(missile1, missile2) {
+    getExplosion(missile1.body.x, missile1.body.y);
+    playExplosionSound();
     missile1.kill();
     missile2.kill();
 
@@ -300,9 +302,7 @@ var onMissileHitMissile = function(missile1, missile2) {
         Nakama.game.add.tween(bonusPrompt).to({y: 100}, 1500, Phaser.Easing.Linear.None, true);
         Nakama.game.add.tween(bonusPrompt).to({alpha: 0}, 1500, Phaser.Easing.Linear.None, true);
     }, this);
-
-    getExplosion(missile1.body.x, missile1.body.y);
-    playExplosionSound();
+    bonusPrompt.destroy();
 }
 
 var onMissileHitItem = function(ship, item) {

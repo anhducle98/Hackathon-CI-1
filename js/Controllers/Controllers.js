@@ -1,6 +1,14 @@
 class Controllers {
     constructor(x, y, spriteName, group, target, configs) {
-        this.sprite = group.create(x, y, 'assets', spriteName);
+        this.sprite = group.getFirstDead();
+        if (this.sprite == null) {
+            this.sprite = group.create(x, y, 'assets', spriteName);
+        } else {
+            this.sprite.x = x;
+            this.sprite.y = y;
+            this.sprite.loadTexture('assets', spriteName);
+            this.sprite.revive();
+        }
         this.sprite.width /= 2;
         this.sprite.height /= 2;
         this.sprite.anchor.setTo(0.5, 0.5);
