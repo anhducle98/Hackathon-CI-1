@@ -38,6 +38,7 @@ var preload = function(){
   Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
   Nakama.game.load.image('smoke', 'Assets/smoke.png');
   Nakama.game.load.image('background', 'Assets/background.png');
+  Nakama.game.load.image('namegame', 'Assets/Original Sprites/NameGame.png');
 
   Nakama.game.load.spritesheet('button', 'Assets/Original Sprites/ButtonPlay.png', 212, 213);
   Nakama.game.load.spritesheet('explode', 'Assets/Original Sprites/Explode.png', 128, 128);
@@ -52,7 +53,7 @@ var preload = function(){
 }
 
 // initialize the game
-var create = function(){
+var create = function(replay){
 
   music = Nakama.game.add.audio('AirPlaneType1');
   music.play();
@@ -75,11 +76,30 @@ var create = function(){
 
   Nakama.starGenerator = new ItemGenerator(3, StarItem);
 
+  if (!(replay === true)){
+  	  Nakama.button = Nakama.game.add.button(Nakama.game.world.centerX - 95, 700, 'button', actionOnClick, this)
+	  Nakama.checkPlay = false;
+	  begin();
+  }
+}
+
+var begin = function(){
+  Nakama.name = Nakama.game.add.sprite(Nakama.game.width/2, 100, 'namegame');
+  Nakama.name.scale.setTo(0.5, 0.5);
+  Nakama.name.anchor.setTo(0.5, 0.5);
+}
+
+function actionOnClick () {
+
+    Nakama.checkPlay = true;
+    Nakama.button.visible = false;
+    Nakama.name.visible = false;
 }
 
 // update game state each frame
 var update = function(){
 //  music.play();
+  if (Nakama.checkPlay) {
 	if (Nakama.player.sprite.alive) {
 		Nakama.player.update();
 
@@ -117,6 +137,9 @@ var update = function(){
 	  item.kill();
     getItem();
 	});
+  } else {
+  	Nakama.background.tilePosition.y += Nakama.configs.ship.SPEED;
+  }
 }
 
 // before camera render (mostly for debug)
@@ -201,5 +224,5 @@ var getExplosion = function(x, y) {
 }
 
 var replayOnclick = function() {
-  create();
+  create(true);
 }
