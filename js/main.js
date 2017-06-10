@@ -56,7 +56,7 @@ var create = function(){
 
   music = Nakama.game.add.audio('AirPlaneType1');
   music.play();
-  music.loop = true;
+  music.loopFull(1);
 
 
   Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
