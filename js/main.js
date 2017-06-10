@@ -73,7 +73,7 @@ var create = function(){
   Nakama.game.input.activePointer.x = -Nakama.game.width/2;
   Nakama.game.input.activePointer.y = Nakama.game.height/2;
 
-  Nakama.starGenerator = new ItemGenerator(5, StarItem);
+  Nakama.starGenerator = new ItemGenerator(3, StarItem);
 
 }
 
