@@ -36,13 +36,27 @@ var preload = function(){
   Nakama.game.time.advancedTiming = true;
 
   Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
-  Nakama.game.load.image('background', 'Assets/sky.png');
   Nakama.game.load.image('smoke', 'Assets/smoke.png');
+  Nakama.game.load.image('background', 'Assets/background.png');
   Nakama.game.load.spritesheet('explode', 'Assets/Original Sprites/Explode.png', 128, 128);
+
+  Nakama.game.load.audio('AirPlaneExplosive', ['Assets/Mp3/AirPlaneExplosive.mp3']);
+  Nakama.game.load.audio('AirPlaneType1', ['Assets/Mp3/AirPlaneType1.mp3']);
+  Nakama.game.load.audio('GetItem', ['Assets/Mp3/GetItem.mp3']);
+  Nakama.game.load.audio('GetItemStar', ['Assets/Mp3/GetItemStar.mp3']);
+  Nakama.game.load.audio('Missile', ['Assets/Mp3/Missile.mp3']);
+  Nakama.game.load.audio('MissileExplosive', ['Assets/Mp3/MissileExplosive.mp3']);
+  Nakama.game.load.audio('PressButtonPlay', ['Assets/Mp3/PressButtonPlay.mp3']);
 }
 
 // initialize the game
 var create = function(){
+
+  music = Nakama.game.add.audio('AirPlaneType1');
+  music.play();
+  music.loop = true;
+
+
   Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
   Nakama.background = Nakama.game.add.tileSprite(0, 0, Nakama.game.width, Nakama.game.height, 'background');
   Nakama.itemGroup = Nakama.game.add.physicsGroup();
@@ -58,10 +72,12 @@ var create = function(){
   Nakama.game.input.activePointer.y = Nakama.game.height/2;
 
   Nakama.starGenerator = new ItemGenerator(1, StarItem);
+
 }
 
 // update game state each frame
 var update = function(){
+//  music.play();
 	if (Nakama.player.sprite.alive) {
 		Nakama.player.update();
 	}
@@ -98,6 +114,7 @@ var update = function(){
 
 	Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.itemGroup, (ship, item) => {
 	  item.kill();
+    getItem();
 	});
 }
 
@@ -123,10 +140,21 @@ var generateMissiles = function() {
   Nakama.missiles.push(new MissilesController(x, y, {}));
 }
 
+var playExplosionSound = function() {
+  let sound = Nakama.game.add.audio('AirPlaneExplosive');
+  sound.play();
+}
+
+var getItem = function() {
+  let sound = Nakama.game.add.audio('GetItem');
+  sound.play();
+}
+
 var onMissileHitShip = function(ship, missile) {
   ship.kill();
   missile.kill();
   getExplosion(ship.body.x, ship.body.y);
+  playExplosionSound();
   setTimeout(create, 2000);
 }
 
@@ -134,6 +162,7 @@ var onMissileHitMissile = function(missile1, missile2) {
   missile1.kill();
   missile2.kill();
   getExplosion(missile1.body.x, missile1.body.y);
+  playExplosionSound();
 }
 
 var getExplosion = function(x, y) {
