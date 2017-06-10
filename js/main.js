@@ -6,7 +6,9 @@ Nakama.configs = {
     },
     missile: {
         SPEED: 12,
-        TURN_RATE: 130
+        TURN_RATE: 130,
+        COOLDOWN: 5,
+        MAX_POPULATION: 5
     },
     item: {
         COOLDOWN: 1
@@ -70,12 +72,20 @@ var create = function(replay){
 
     Nakama.player = new ShipController(Nakama.game.width/2, Nakama.game.height/2, {});
 
+    Nakama.health = Nakama.game.add.sprite(Nakama.game.width/2, Nakama.game.height/2, 'assets', 'Shield.png');
+    Nakama.health.scale.setTo(0.7, 0.7);
+    Nakama.health.anchor.setTo(0.5, 0.5);
+    Nakama.health.visible = false;
+
     Nakama.missiles = [];
 
     Nakama.game.input.activePointer.x = -Nakama.game.width/2;
     Nakama.game.input.activePointer.y = Nakama.game.height/2;
 
     Nakama.starGenerator = new ItemGenerator(3, StarItem);
+    Nakama.speedGenerator = new ItemGenerator(10, SpeedItem);
+    Nakama.healthGenerator = new ItemGenerator(10, HealthItem);
+
     Nakama.warningsContainer = new WarningsContainer();
     if (!(replay === true)){
         Nakama.button = Nakama.game.add.button(Nakama.game.world.centerX - 95, 700, 'button', actionOnClick, this)
@@ -138,6 +148,7 @@ var update = function(){
         Nakama.game.physics.arcade.overlap(Nakama.missileGroup, Nakama.missileGroup, onMissileHitMissile);
         Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.itemGroup, (ship, item) => {
             item.kill();
+            checkItem(item);
             getItem();
         });
 
@@ -165,14 +176,25 @@ var generateItems = function() {
     if (star != null) {
         Nakama.warningsContainer.putWarning(star.sprite);
     }
+
+    let speed = Nakama.speedGenerator.generate();
+    if (speed) {
+        Nakama.warningsContainer.putWarning(speed.sprite);
+    }
+    let health = Nakama.healthGenerator.generate();
+    if (health) {
+        Nakama.warningsContainer.putWarning(health.sprite);
+    }
 }
 
 // auto generate missiles
 var sinceLastMissile = 0;
 var generateMissiles = function() {
     sinceLastMissile += Nakama.game.time.physicsElapsed;
-    if (sinceLastMissile < 2) return;
+    if (sinceLastMissile < Nakama.configs.missile.COOLDOWN) return;
     sinceLastMissile = 0;
+    if (Nakama.missiles.length >= Nakama.configs.missile.MAX_POPULATION) return;
+
     let deltaX = Math.random() * 300 - 150;
     let deltaY = Math.random() * 300 - 150;
     if (deltaX < 0) deltaX -= 800; else deltaX += 800;
@@ -195,20 +217,24 @@ var getItem = function() {
 }
 
 var onMissileHitShip = function(ship, missile) {
-    ship.kill();
+    if (Nakama.health.visible){
+      Nakama.health.visible = false;
+    }
+    else {
+      ship.kill();
+      // game over
+      var style = { font: "bold 50px Arial", fill: "red", boundsAlignH: "center", boundsAlignV: "middle" };
+      var text = Nakama.game.add.text(0, 0, "GAME OVER", style);
+      text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+      text.setTextBounds(0, 100, 800, 100);
+
+      var replayButton = Nakama.game.add.button(
+          Nakama.game.world.centerX - 95, 700, 'button', replayOnclick, this
+      );
+    }
     missile.kill();
     getExplosion(ship.body.x, ship.body.y);
     playExplosionSound();
-
-    // game over
-    var style = { font: "bold 50px Arial", fill: "red", boundsAlignH: "center", boundsAlignV: "middle" };
-    var text = Nakama.game.add.text(0, 0, "GAME OVER", style);
-    text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
-    text.setTextBounds(0, 100, 800, 100);
-
-    Nakama.replayButton = Nakama.game.add.button(
-        Nakama.game.world.centerX - 95, 700, 'button', replayOnclick, this
-    );
 }
 
 var onMissileHitMissile = function(missile1, missile2) {
@@ -242,4 +268,19 @@ var getExplosion = function(x, y) {
 var replayOnclick = function() {
     create(true);
     Nakama.replayButton.inputEnabled = false;
+}
+
+var checkItem = function(item) {
+    if (item.itemType == 'Speed'){
+        Nakama.player.configs.speed = Nakama.configs.ship.SPEED * 1.25;
+        setTimeout(function(){
+            Nakama.player.configs.speed = Nakama.configs.ship.SPEED;
+        }, 10000);
+    }
+    if (item.itemType == 'Health'){
+        Nakama.health.visible = true;
+        setTimeout(function(){
+            Nakama.health.visible = false;
+        }, 10000);
+    }
 }

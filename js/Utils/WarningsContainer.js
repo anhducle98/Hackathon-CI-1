@@ -16,12 +16,14 @@ class WarningsContainer {
             let point = lineToTarget.intersects(border, true);
             //console.log(point);
             {
-                let fileName = item.itemType == "missile" ? "WarningType1.png" : "WarningType2.png";
+                let fileName = item.itemType == "Star" ? "WarningType2.png" : "WarningType1.png";
+                if (item.itemType == "Missile") fileName = "ButtonPlay.png";
+
                 let sprite = Nakama.warningsGroup.create(point ? point.x : 10, point ? point.y : 10, 'assets', fileName);
                 sprite.anchor.setTo(0.5, 0.5);
-                sprite.width /= 2; sprite.height /= 2;
+                sprite.width = 30; sprite.height = 30;
                 sprite.angle += i * 90;
-                if (item.itemType == "missile") sprite.angle += 180;
+                if (item.itemType == "Missile") sprite.angle += 180;
                 sprite.AB = lineToTarget;
                 sprite.CD = border;
                 sprite.item = item;
