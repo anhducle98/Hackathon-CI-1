@@ -51,7 +51,9 @@ var preload = function(){
 // initialize the game
 var create = function(){
 
-  music = Nakama.game.add.audio('AirPlaneExplosive');
+  music = Nakama.game.add.audio('AirPlaneType1');
+  music.play();
+  music.loop = true;
 
 
   Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -74,7 +76,7 @@ var create = function(){
 
 // update game state each frame
 var update = function(){
-  music.play();
+//  music.play();
 	if (Nakama.player.sprite.alive) {
 		Nakama.player.update();
 	}
@@ -111,6 +113,7 @@ var update = function(){
 
 	Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.itemGroup, (ship, item) => {
 	  item.kill();
+    getItem();
 	});
 }
 
@@ -136,10 +139,21 @@ var generateMissiles = function() {
   Nakama.missiles.push(new MissilesController(x, y, {}));
 }
 
+var playExplosionSound = function() {
+  let sound = Nakama.game.add.audio('AirPlaneExplosive');
+  sound.play();
+}
+
+var getItem = function() {
+  let sound = Nakama.game.add.audio('GetItem');
+  sound.play();
+}
+
 var onMissileHitShip = function(ship, missile) {
   ship.kill();
   missile.kill();
   getExplosion(ship.body.x, ship.body.y);
+  playExplosionSound();
   setTimeout(create, 2000);
 }
 
@@ -147,6 +161,7 @@ var onMissileHitMissile = function(missile1, missile2) {
   missile1.kill();
   missile2.kill();
   getExplosion(missile1.body.x, missile1.body.y);
+  playExplosionSound();
 }
 
 var getExplosion = function(x, y) {
