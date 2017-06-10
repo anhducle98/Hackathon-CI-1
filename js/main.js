@@ -5,9 +5,9 @@ Nakama.configs = {
         TURN_RATE: 200 // degree/frame
     },
     missile: {
-        SPEED: 10,
+        SPEED: 12,
         TURN_RATE: 130,
-        COOLDOWN: 1,
+        COOLDOWN: 3,
         MAX_POPULATION: 5
     },
     item: {
@@ -273,7 +273,7 @@ var generateMissiles = function() {
 
 var generateKillerMissiles = function() {
     sinceLastKillerMissile += Nakama.game.time.physicsElapsed;
-    if (sinceLastKillerMissile < Nakama.configs.missile.COOLDOWN * 10) return;
+    if (sinceLastKillerMissile < Nakama.configs.missile.COOLDOWN * 4) return;
     sinceLastKillerMissile = 0;
     for (let it = 1; it <= 5; ++it) {
         let deltaX = Math.random() * 600 - 300;
