@@ -9,7 +9,13 @@ class MissilesController extends Controllers {
         ));
         this.sprite.scale.setTo(0.5, 0.5);
         this.sprite.itemType = "Missile";
-        setTimeout(() => {this.sprite.kill()}, 15000);
+        this.lastSmokeTime = 0;
+        this.sprite.alpha = 1;
+        setTimeout(() => {
+            Nakama.game.add.tween(this.sprite).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            this.sprite.kill();
+        }
+        ,15000);
         /*
     this.SMOKE_LIFETIME = 3000; // milliseconds
         this.smokeEmitter = Nakama.game.add.emitter(0, 0, 100);
@@ -30,8 +36,13 @@ class MissilesController extends Controllers {
     }
 
     update(shift) {
-        
         Controllers.prototype.update.call(this, shift);
+        this.lastSmokeTime += Nakama.game.time.physicsElapsed;
+        if (this.lastSmokeTime <= 0.02) {
+            return;
+        }
+        this.lastSmokeTime = 0;
+        new Smoke(this.sprite.x, this.sprite.y);
         /*
         this.smokeEmitter.x = this.sprite.x;
         this.smokeEmitter.y = this.sprite.y;
