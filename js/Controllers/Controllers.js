@@ -1,10 +1,11 @@
 class Controllers {
     constructor(x, y, spriteName, group, target, configs) {
         this.sprite = group.create(x, y, 'assets', spriteName);
+        this.sprite.width /= 2;
+        this.sprite.height /= 2;
         this.sprite.anchor.setTo(0.5, 0.5);
-        //let radius = Math.max(this.sprite.width, this.sprite.height) / 2;
-        let radius = (this.sprite.width + this.sprite.height) / 4;
-        this.sprite.body.setCircle(radius, 0, 0);
+        let radius = Math.max(this.sprite.width, this.sprite.height) / 2;
+        this.sprite.body.setCircle(radius, this.sprite.width / 2, this.sprite.height / 2);
         this.velocity = new Phaser.Point(0, 0);
         // this.sprite.body.collideWorldBounds = true;
 

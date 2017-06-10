@@ -123,6 +123,11 @@ var update = function(){
             item.y += shift.y;
         });
 
+        Nakama.explosionGroup.forEach((item) => {
+            item.x += shift.x;
+            item.y += shift.y;
+        });
+
         Nakama.player.sprite.x = Nakama.game.width/2;
         Nakama.player.sprite.y = Nakama.game.height/2;
 
@@ -141,7 +146,15 @@ var update = function(){
 
 // before camera render (mostly for debug)
 var render = function() {
-
+    Nakama.game.debug.body(Nakama.player.sprite);
+    /*
+    Nakama.itemGroup.forEach((item) => {
+        Nakama.game.debug.body(item);
+    });
+    Nakama.missileGroup.forEach((item) => {
+        Nakama.game.debug.body(item);
+    });
+    */
 }
 
 var generateItems = function() {
@@ -185,7 +198,7 @@ var onMissileHitShip = function(ship, missile) {
     text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
     text.setTextBounds(0, 100, 800, 100);
 
-    var replayButton = Nakama.game.add.button(
+    Nakama.replayButton = Nakama.game.add.button(
         Nakama.game.world.centerX - 95, 700, 'button', replayOnclick, this
     );
 }
@@ -220,4 +233,5 @@ var getExplosion = function(x, y) {
 
 var replayOnclick = function() {
     create(true);
+    Nakama.replayButton.inputEnabled = false;
 }
