@@ -37,6 +37,7 @@ var preload = function(){
 
   Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
   Nakama.game.load.image('background', 'Assets/sky.png');
+  Nakama.game.load.image('smoke', 'Assets/smoke.png');
   Nakama.game.load.spritesheet('explode', 'Assets/Original Sprites/Explode.png', 128, 128);
 }
 
