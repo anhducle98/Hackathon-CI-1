@@ -13,6 +13,8 @@ class ItemGenerator {
 		this.sinceLastTime = 0;
 		let deltaX = Math.random() * 600 - 300;
 		let deltaY = Math.random() * 600 - 300;
+		if (deltaX < 0) deltaX -= 500; else deltaX += 500;
+  		if (deltaY < 0) deltaY -= 500; else deltaY += 500;
 		let x = Nakama.player.sprite.x + deltaX;
 		let y = Nakama.player.sprite.y + deltaY;
 		new this.itemConstructor(x, y);

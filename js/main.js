@@ -5,8 +5,8 @@ Nakama.configs = {
     TURN_RATE: 200 // degree/frame
   },
   missile: {
-    SPEED: 13,
-    TURN_RATE: 100
+    SPEED: 12,
+    TURN_RATE: 120
   },
   item: {
     COOLDOWN: 1
@@ -71,7 +71,7 @@ var create = function(){
   Nakama.game.input.activePointer.x = -Nakama.game.width/2;
   Nakama.game.input.activePointer.y = Nakama.game.height/2;
 
-  Nakama.starGenerator = new ItemGenerator(1, StarItem);
+  Nakama.starGenerator = new ItemGenerator(5, StarItem);
 
 }
 
@@ -133,8 +133,10 @@ var generateMissiles = function() {
   sinceLastMissile += Nakama.game.time.physicsElapsed;
   if (sinceLastMissile < 2) return;
   sinceLastMissile = 0;
-  let deltaX = Math.random() * 1000 - 500;
-  let deltaY = Math.random() * 1000 - 500;
+  let deltaX = Math.random() * 300 - 150;
+  let deltaY = Math.random() * 300 - 150;
+  if (deltaX < 0) deltaX -= 800; else deltaX += 800;
+  if (deltaY < 0) deltaY -= 800; else deltaY += 800;
   let x = Nakama.player.sprite.x + deltaX;
   let y = Nakama.player.sprite.y + deltaY;
   Nakama.missiles.push(new MissilesController(x, y, {}));
