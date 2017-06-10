@@ -5,7 +5,7 @@ Nakama.configs = {
         TURN_RATE: 200 // degree/frame
     },
     missile: {
-        SPEED: 10,
+        SPEED: 12,
         TURN_RATE: 120
     },
     item: {
