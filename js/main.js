@@ -38,6 +38,8 @@ var preload = function(){
   Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
   Nakama.game.load.image('smoke', 'Assets/smoke.png');
   Nakama.game.load.image('background', 'Assets/background.png');
+
+  Nakama.game.load.spritesheet('button', 'Assets/Original Sprites/ButtonPlay.png', 212, 213);
   Nakama.game.load.spritesheet('explode', 'Assets/Original Sprites/Explode.png', 128, 128);
 
   Nakama.game.load.audio('AirPlaneExplosive', ['Assets/Mp3/AirPlaneExplosive.mp3']);
@@ -80,6 +82,8 @@ var update = function(){
 //  music.play();
 	if (Nakama.player.sprite.alive) {
 		Nakama.player.update();
+
+    generateItems();
 	}
 	var shift = new Phaser.Point(
 	  -(Nakama.player.sprite.x - Nakama.game.width/2),
@@ -105,13 +109,10 @@ var update = function(){
 	Nakama.player.sprite.x = Nakama.game.width/2;
 	Nakama.player.sprite.y = Nakama.game.height/2;
 
-	generateItems();
 	generateMissiles();
 
 	Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.missileGroup, onMissileHitShip);
-
 	Nakama.game.physics.arcade.overlap(Nakama.missileGroup, Nakama.missileGroup, onMissileHitMissile);
-
 	Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.itemGroup, (ship, item) => {
 	  item.kill();
     getItem();
@@ -157,7 +158,18 @@ var onMissileHitShip = function(ship, missile) {
   missile.kill();
   getExplosion(ship.body.x, ship.body.y);
   playExplosionSound();
-  setTimeout(create, 2000);
+
+  // game over
+  var style = { font: "bold 50px Arial", fill: "red", boundsAlignH: "center", boundsAlignV: "middle" };
+  var text = Nakama.game.add.text(0, 0, "GAME OVER", style);
+  text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+  text.setTextBounds(0, 100, 800, 100);
+
+  var replayButton = Nakama.game.add.button(
+    Nakama.game.world.centerX - 95, 400,
+    'button', replayOnclick, this
+  );
+
 }
 
 var onMissileHitMissile = function(missile1, missile2) {
@@ -181,15 +193,13 @@ var getExplosion = function(x, y) {
 
     Nakama.explosionGroup.add(explosion);
   }
-
   explosion.revive();
-
   explosion.x = x;
   explosion.y = y;
-
-  // Set rotation of the explosion at random for a little variety
-   explosion.angle = Nakama.game.rnd.integerInRange(0, 360);
-
-  // Play the animation
+  explosion.angle = Nakama.game.rnd.integerInRange(0, 360);
   explosion.animations.play('boom');
+}
+
+var replayOnclick = function() {
+  create();
 }
