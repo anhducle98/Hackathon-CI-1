@@ -6,5 +6,6 @@ class ShipController extends Controllers {
         turnRate: Nakama.configs.ship.TURN_RATE
       }
     ));
+    this.sprite.scale.setTo(0.5, 0.5);
   }
 }

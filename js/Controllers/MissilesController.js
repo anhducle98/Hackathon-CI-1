@@ -7,5 +7,6 @@ class MissilesController extends Controllers {
         turnRate: Nakama.configs.missile.TURN_RATE
       }
     ));
+    this.sprite.scale.setTo(0.5, 0.5);
   }
 }

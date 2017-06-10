@@ -5,8 +5,8 @@ Nakama.configs = {
     TURN_RATE: 200 // degree/frame
   },
   missile: {
-    SPEED: 10,
-    TURN_RATE: 130
+    SPEED: 13,
+    TURN_RATE: 100
   },
   item: {
     COOLDOWN: 1
@@ -61,45 +61,43 @@ var create = function(){
 
 // update game state each frame
 var update = function(){
-  if (Nakama.player.sprite.alive) {
-    Nakama.player.update();
-    var shift = new Phaser.Point(
-      -(Nakama.player.sprite.x - Nakama.game.width/2),
-      -(Nakama.player.sprite.y - Nakama.game.height/2)
-    );
-    for(var i = 0; i < Nakama.missiles.length; i++) {
-      Nakama.missiles[i].update(shift);
+	if (Nakama.player.sprite.alive) {
+		Nakama.player.update();
+	}
+	var shift = new Phaser.Point(
+	  -(Nakama.player.sprite.x - Nakama.game.width/2),
+	  -(Nakama.player.sprite.y - Nakama.game.height/2)
+	);
+	for(var i = 0; i < Nakama.missiles.length; i++) {
+	  Nakama.missiles[i].update(shift);
 
-      // if missile isn't alive then destroy it
-      if(!Nakama.missiles[i].sprite.alive){
-        Nakama.missiles.splice(i, 1);
-      }
-    }
+	  // if missile isn't alive then destroy it
+	  if(!Nakama.missiles[i].sprite.alive){
+	    Nakama.missiles.splice(i, 1);
+	  }
+	}
 
-    Nakama.background.tilePosition.x += shift.x;
-    Nakama.background.tilePosition.y += shift.y;
+	Nakama.background.tilePosition.x += shift.x;
+	Nakama.background.tilePosition.y += shift.y;
 
-    Nakama.itemGroup.forEach((item) => {
-      item.x += shift.x;
-      item.y += shift.y;
-    });
+	Nakama.itemGroup.forEach((item) => {
+	  item.x += shift.x;
+	  item.y += shift.y;
+	});
 
-    Nakama.player.sprite.x = Nakama.game.width/2;
-    Nakama.player.sprite.y = Nakama.game.height/2;
+	Nakama.player.sprite.x = Nakama.game.width/2;
+	Nakama.player.sprite.y = Nakama.game.height/2;
 
-    generateItems();
-    generateMissiles();
+	generateItems();
+	generateMissiles();
 
-    Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.missileGroup, onMissileHitShip);
+	Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.missileGroup, onMissileHitShip);
 
-    Nakama.game.physics.arcade.overlap(Nakama.missileGroup, Nakama.missileGroup, onMissileHitMissile);
+	Nakama.game.physics.arcade.overlap(Nakama.missileGroup, Nakama.missileGroup, onMissileHitMissile);
 
-    Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.itemGroup, (ship, item) => {
-      item.kill();
-    });
-  }else {
-    // TODO: if player has died then do something
-  }
+	Nakama.game.physics.arcade.overlap(Nakama.playerGroup, Nakama.itemGroup, (ship, item) => {
+	  item.kill();
+	});
 }
 
 // before camera render (mostly for debug)
@@ -128,12 +126,13 @@ var onMissileHitShip = function(ship, missile) {
   ship.kill();
   missile.kill();
   getExplosion(ship.body.x, ship.body.y);
+  setTimeout(create, 2000);
 }
 
 var onMissileHitMissile = function(missile1, missile2) {
   missile1.kill();
   missile2.kill();
-  getExplosion(missile1.body.x, missile2.body.y);
+  getExplosion(missile1.body.x, missile1.body.y);
 }
 
 var getExplosion = function(x, y) {
