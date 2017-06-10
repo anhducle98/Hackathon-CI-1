@@ -4,8 +4,8 @@ class Controllers {
         this.sprite.width /= 2;
         this.sprite.height /= 2;
         this.sprite.anchor.setTo(0.5, 0.5);
-        let radius = Math.max(this.sprite.width, this.sprite.height) / 2;
-        this.sprite.body.setCircle(radius, this.sprite.width / 2, this.sprite.height / 2);
+        let radius = (this.sprite.width + this.sprite.height) / 5;
+        this.sprite.body.setCircle(radius, this.sprite.width / 3 * 2, this.sprite.height / 3 * 2);
         this.velocity = new Phaser.Point(0, 0);
         // this.sprite.body.collideWorldBounds = true;
 

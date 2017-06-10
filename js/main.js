@@ -6,7 +6,7 @@ Nakama.configs = {
     },
     missile: {
         SPEED: 12,
-        TURN_RATE: 120
+        TURN_RATE: 130
     },
     item: {
         COOLDOWN: 1
