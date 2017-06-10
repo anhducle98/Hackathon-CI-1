@@ -8,5 +8,6 @@ class MissilesController extends Controllers {
       }
     ));
     this.sprite.scale.setTo(0.5, 0.5);
+
   }
 }
