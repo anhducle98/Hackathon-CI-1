@@ -5,7 +5,7 @@ Nakama.configs = {
         TURN_RATE: 200 // degree/frame
     },
     missile: {
-        SPEED: 12,
+        SPEED: 10,
         TURN_RATE: 120
     },
     item: {
@@ -62,6 +62,7 @@ var create = function(replay){
 
     Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
     Nakama.background = Nakama.game.add.tileSprite(0, 0, Nakama.game.width, Nakama.game.height, 'background');
+    Nakama.warningsGroup = Nakama.game.add.physicsGroup();
     Nakama.itemGroup = Nakama.game.add.physicsGroup();
     Nakama.playerGroup = Nakama.game.add.physicsGroup();
     Nakama.missileGroup = Nakama.game.add.physicsGroup();
@@ -75,7 +76,7 @@ var create = function(replay){
     Nakama.game.input.activePointer.y = Nakama.game.height/2;
 
     Nakama.starGenerator = new ItemGenerator(3, StarItem);
-
+    Nakama.warningsContainer = new WarningsContainer();
     if (!(replay === true)){
         Nakama.button = Nakama.game.add.button(Nakama.game.world.centerX - 95, 700, 'button', actionOnClick, this)
         Nakama.checkPlay = false;
@@ -139,6 +140,8 @@ var update = function(){
             item.kill();
             getItem();
         });
+
+        Nakama.warningsContainer.update();
     } else {
         Nakama.background.tilePosition.y += Nakama.configs.ship.SPEED;
     }
@@ -158,7 +161,10 @@ var render = function() {
 }
 
 var generateItems = function() {
-    Nakama.starGenerator.generate();
+    let star = Nakama.starGenerator.generate();
+    if (star != null) {
+        Nakama.warningsContainer.putWarning(star.sprite);
+    }
 }
 
 // auto generate missiles
@@ -173,7 +179,9 @@ var generateMissiles = function() {
     if (deltaY < 0) deltaY -= 800; else deltaY += 800;
     let x = Nakama.player.sprite.x + deltaX;
     let y = Nakama.player.sprite.y + deltaY;
-    Nakama.missiles.push(new MissilesController(x, y, {}));
+    let missile = new MissilesController(x, y, {});
+    Nakama.missiles.push(missile);
+    Nakama.warningsContainer.putWarning(missile.sprite);
 }
 
 var playExplosionSound = function() {

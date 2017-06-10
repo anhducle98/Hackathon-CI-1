@@ -8,6 +8,7 @@ class MissilesController extends Controllers {
             }
         ));
         this.sprite.scale.setTo(0.5, 0.5);
+        this.sprite.itemType = "missile";
         setTimeout(() => {this.sprite.kill()}, 15000);
         /*
     this.SMOKE_LIFETIME = 3000; // milliseconds

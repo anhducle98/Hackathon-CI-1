@@ -8,7 +8,7 @@ class ItemGenerator {
 	generate() {
 		this.sinceLastTime += Nakama.game.time.physicsElapsed;
 		if (this.sinceLastTime < this.reloadTime) {
-			return;
+			return null;
 		}
 		this.sinceLastTime = 0;
 		let deltaX = Math.random() * 400 - 200;
@@ -17,6 +17,6 @@ class ItemGenerator {
   		if (deltaY < 0) deltaY -= 200; else deltaY += 200;
 		let x = Nakama.player.sprite.x + deltaX;
 		let y = Nakama.player.sprite.y + deltaY;
-		new this.itemConstructor(x, y);
+		return new this.itemConstructor(x, y);
 	}
 }
