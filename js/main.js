@@ -275,7 +275,7 @@ var onMissileHitShip = function(ship, missile) {
         }else if(totalScore > localStorage.getItem('highscore')){
             localStorage.setItem('highscore', totalScore);
         }
-        Nakama.game.add.text(280, 200, 'HIGHSCORE: ' + totalScore, style2);
+        Nakama.game.add.text(280, 200, 'HIGHSCORE: ' + localStorage.getItem('highscore'), style2);
 
         Nakama.replayButton = Nakama.game.add.button(
             Nakama.game.world.centerX - 95, 700, 'button', replayOnclick, this
