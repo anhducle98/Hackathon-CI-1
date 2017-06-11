@@ -7,4 +7,12 @@ class ShipController extends Controllers {
             }
         ));
     }
+
+    upgrade() {
+    	this.sprite.loadTexture('assets', 'AirPlaneType2.png');
+    }
+
+    downgrade() {
+    	this.sprite.loadTexture('assets', 'AirPlaneType1.png');	
+    }
 }

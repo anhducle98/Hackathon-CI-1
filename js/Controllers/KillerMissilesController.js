@@ -1,6 +1,6 @@
 class KillerMissilesController extends MissilesController {
 	constructor(x, y, configs) {
-		console.log("kill");
+		//console.log("kill");
 		super(x, y, Object.assign(configs, {
 			WOBBLE_LIMIT: -1
 		}));
@@ -11,8 +11,10 @@ class KillerMissilesController extends MissilesController {
 		this.velocity = this.velocity.setMagnitude(30);
 		this.velocity.x += Math.random() * 10 - 5;
 		this.velocity.y += Math.random() * 10 - 5;
-        this.lifespan = 2000;
         this.sprite.angle = Math.atan2(this.velocity.x, -this.velocity.y) * (180 / Math.PI);
+        setTimeout(() => {
+        	this.sprite.kill();
+        }, 3000);
 	}
 
 	update(shift) {

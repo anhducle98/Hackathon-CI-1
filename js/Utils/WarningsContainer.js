@@ -14,7 +14,6 @@ class WarningsContainer {
             let border = this.borders[i];
             let lineToTarget = new Phaser.Line(Nakama.player.sprite.x, Nakama.player.sprite.y, item.x, item.y);
             let point = lineToTarget.intersects(border, true);
-            //console.log(point);
             {
                 let fileName = item.itemType == "Star" ? "WarningType2.png" : "WarningType1.png";
                 if (item.itemType == "Missile") fileName = "ButtonPlay.png";

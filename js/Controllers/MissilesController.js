@@ -20,7 +20,7 @@ class MissilesController extends Controllers {
             let tween = Nakama.game.add.tween(this.sprite).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
             setTimeout(() => { tween.stop(); this.sprite.kill(); }, 1000);
         }
-        ,15000);
+        ,20000);
     }
 
     update(shift) {
