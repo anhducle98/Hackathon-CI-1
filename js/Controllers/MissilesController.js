@@ -17,8 +17,8 @@ class MissilesController extends Controllers {
         this.lastSmokeTime = 0;
         this.sprite.alpha = 1;
         setTimeout(() => {
-            let tween = Nakama.game.add.tween(this.sprite).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true, 0, 1000, true);
-            setTimeout(() => { tween.stop(); this.sprite.kill(); }, 1000);
+            let tween = Nakama.game.add.tween(this.sprite).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+            tween.onComplete.add(() => { tween.stop(); this.sprite.destroy(); }, this);
         }
         ,20000);
     }

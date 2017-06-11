@@ -416,7 +416,7 @@ var getExplosion = function(x, y) {
 }
 
 var replayOnclick = function() {
-    console.log("replayed");
+    //console.log("replayed");
     Nakama.game.world.removeAll();
     create(true);
     Nakama.timer.resume();

@@ -3,15 +3,12 @@ class Controllers {
         this.sprite = group.create(x, y, 'assets', spriteName);
         this.sprite.x = x;
         this.sprite.y = y;
-        this.sprite.loadTexture('assets', spriteName);
-        this.sprite.revive();
         this.sprite.width /= 2;
         this.sprite.height /= 2;
         this.sprite.anchor.setTo(0.5, 0.5);
         let radius = (this.sprite.width + this.sprite.height) / 5;
         this.sprite.body.setCircle(radius, this.sprite.width / 3 * 2, this.sprite.height / 3 * 2);
         this.velocity = new Phaser.Point(0, 0);
-        // this.sprite.body.collideWorldBounds = true;
 
         this.configs = configs;
         this.target = target;

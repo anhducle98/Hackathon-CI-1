@@ -13,7 +13,7 @@ class KillerMissilesController extends MissilesController {
 		this.velocity.y += Math.random() * 10 - 5;
         this.sprite.angle = Math.atan2(this.velocity.x, -this.velocity.y) * (180 / Math.PI);
         setTimeout(() => {
-        	this.sprite.kill();
+        	this.sprite.destroy();
         }, 3000);
 	}
 
