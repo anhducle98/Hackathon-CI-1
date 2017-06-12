@@ -40,11 +40,15 @@ class WarningsContainer {
         return point;
     }
 
+    insideMap(item) {
+        return item.x >= 0 && item.y >= 0 && item.x <= Nakama.game.width && item.y <= Nakama.game.height;
+    }
+
     update() {
         let new_warnings = [];
         for (let sprite of this.warnings) {
             let point = this.intersect(sprite);
-            if (!sprite.item.alive) {
+            if (!sprite.item.alive || this.insideMap(sprite.item)) {
                 sprite.destroy();
                 continue;
             }
