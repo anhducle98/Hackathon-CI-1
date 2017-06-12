@@ -48,7 +48,7 @@ class WarningsContainer {
         let new_warnings = [];
         for (let sprite of this.warnings) {
             let point = this.intersect(sprite);
-            if (!sprite.item.alive || this.insideMap(sprite.item)) {
+            if (!sprite.item.alive || (sprite.item.itemType == "Missile" && this.insideMap(sprite.item))) {
                 sprite.destroy();
                 continue;
             }
