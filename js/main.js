@@ -96,6 +96,7 @@ var create = function(replay){
         90, 18, Nakama.countTime,
         { font: '34px Arial', fill: 'black', wordWrap: true, wordWrapWidth: 50 }
     );
+    updateTimeText();
 
     Nakama.starCount = 0;
     Nakama.healthCount = 0;
@@ -126,6 +127,9 @@ var create = function(replay){
     Nakama.replayButton.visible = false;
 
     Nakama.timer = Nakama.game.time.events;
+    if (Nakama.eventHealth) clearTimeout(Nakama.eventHealth);
+    if (Nakama.eventSpeed) clearTimeout(Nakama.eventSpeed);
+
     if (!(replay === true)){
         Nakama.button = Nakama.game.add.button(Nakama.game.world.centerX - 95, 700, 'button', actionOnClick, this)
         Nakama.checkPlay = false;
@@ -140,9 +144,14 @@ var begin = function(){
     Nakama.name.anchor.setTo(0.5, 0.5);
 }
 
+var updateTimeText = function() {
+  let pad2 = (number) => (number < 10 ? '0' : '') + number;
+  Nakama.timeScore.setText(Math.floor(Nakama.countTime / 60) + ":" + pad2(Nakama.countTime % 60));
+}
+
 var updateCounter = function() {
   Nakama.countTime++;
-  Nakama.timeScore.setText(Nakama.countTime);
+  updateTimeText();
 }
 
 function actionOnClick () {
@@ -337,12 +346,12 @@ var onMissileHitShip = function(ship, missile) {
         var text = 'YOUR SCORE: ' + totalScore;
         Nakama.box = Nakama.game.add.group();
         Nakama.box.addChild(Nakama.game.add.text(0, 0, text, style1));
-        Nakama.box.addChild(Nakama.game.add.sprite(80, 300, 'assets', 'IconTime.png'));
-        Nakama.box.addChild(Nakama.game.add.sprite(80, 400, 'assets', 'ButtonStar.png'));
-        Nakama.box.addChild(Nakama.game.add.text(250, 300, '+' + Nakama.countTime, style2));
-        Nakama.box.addChild(Nakama.game.add.text(250, 400, '+' + Nakama.starScore * 15, style2));
-        Nakama.box.addChild(Nakama.game.add.text(50, 500, 'Bonus:'), style2);
-        Nakama.box.addChild(Nakama.game.add.text(250, 500, '+' + Nakama.bonus, style2));
+        Nakama.box.addChild(Nakama.game.add.sprite(90, 200, 'assets', 'IconTime.png'));
+        Nakama.box.addChild(Nakama.game.add.sprite(90, 300, 'assets', 'ButtonStar.png'));
+        Nakama.box.addChild(Nakama.game.add.text(260, 200, '+' + Nakama.countTime, style2));
+        Nakama.box.addChild(Nakama.game.add.text(260, 300, '+' + Nakama.starScore * 15, style2));
+        Nakama.box.addChild(Nakama.game.add.text(60, 400, 'Bonus:'), style2);
+        Nakama.box.addChild(Nakama.game.add.text(260, 400, '+' + Nakama.bonus, style2));
 
 
         if(localStorage.getItem('highscore') === null){
@@ -350,7 +359,7 @@ var onMissileHitShip = function(ship, missile) {
         }else if(totalScore > localStorage.getItem('highscore')){
             localStorage.setItem('highscore', totalScore);
         }
-        Nakama.box.addChild(Nakama.game.add.text(80, 100, 'HIGHSCORE: ' + localStorage.getItem('highscore'), style2));
+        Nakama.box.addChild(Nakama.game.add.text(90, 100, 'HIGHSCORE: ' + localStorage.getItem('highscore'), style2));
         let maxWidth = 0;
         Nakama.box.forEach((text) => {text.update(); maxWidth = Math.max(maxWidth, text.width);});
         Nakama.box.x = Nakama.game.width / 2 - maxWidth / 2;
@@ -430,14 +439,16 @@ var checkItem = function(item) {
     if (item.itemType == 'Speed'){
         Nakama.player.configs.speed = Nakama.configs.ship.SPEED * 1.25;
         Nakama.player.upgrade();
-        setTimeout(function(){
+        if (Nakama.eventSpeed) clearTimeout(Nakama.eventSpeed);
+        Nakama.eventSpeed = setTimeout(function(){
             Nakama.player.configs.speed = Nakama.configs.ship.SPEED;
             Nakama.player.downgrade();
         }, 10000);
     }
     if (item.itemType == 'Health'){
         Nakama.health.visible = true;
-        setTimeout(function(){
+        if (Nakama.eventHealth) clearTimeout(Nakama.eventHealth);
+        Nakama.eventHealth = setTimeout(function(){
             Nakama.health.visible = false;
         }, 10000);
     }
