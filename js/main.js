@@ -60,8 +60,11 @@ var create = function(replay){
     Nakama.music = Nakama.game.add.audio('AirPlaneType1');
     Nakama.music.play();
     Nakama.music.loopFull(1);
-    //Nakama.missileSound = Nakama.game.add.audio('Missile');
-    //Nakama.missileSound.volume = 0;
+    Nakama.missileSound = Nakama.game.add.audio('Missile');
+    Nakama.missileSound.play();
+    Nakama.missileSound.loopFull(1);
+    Nakama.missileSound.volume = 0;
+
     Nakama.explosionSound = Nakama.game.add.audio('AirPlaneExplosive');
     Nakama.getItemSound = Nakama.game.add.audio('GetItem');
 
@@ -160,8 +163,6 @@ function actionOnClick () {
     Nakama.buttonpause.visible = true;
     Nakama.name.visible = false;
     Nakama.timer.loop(Phaser.Timer.SECOND, updateCounter, this);
-    //Nakama.missileSound.play();
-    //Nakama.missileSound.loopFull(1);
 }
 
 function adjustMissileVolume() {
@@ -170,7 +171,7 @@ function adjustMissileVolume() {
     for (let it of Nakama.missiles) if (it.sprite.alive) {
         minDist = Math.min(minDist, distance(it.sprite.x, it.sprite.y, Nakama.player.sprite.x, Nakama.player.sprite.y));
     }
-    //Nakama.missileSound.volume = 1.0 / Math.pow(2, minDist / 100.0);
+    Nakama.missileSound.volume = 1.0 / Math.pow(2, minDist / 50.0);
 }
 
 // update game state each frame
@@ -367,6 +368,7 @@ var onMissileHitShip = function(ship, missile) {
         Nakama.replayButton.visible = true;
         Nakama.buttonpause.visible = false;
         Nakama.music.stop();
+        Nakama.missileSound.stop();
     }
     missile.kill();
     getExplosion(ship.body.x, ship.body.y);
@@ -430,7 +432,8 @@ var replayOnclick = function() {
     create(true);
     Nakama.timer.resume();
     Nakama.music.play();
-    //Nakama.missileSound.play();
+    Nakama.missileSound.volume = 0;
+    Nakama.missileSound.play();
     Nakama.replayButton.kill();
     Nakama.buttonpause.visible = true;
 }
@@ -464,8 +467,11 @@ var actionPause = function(){
     if (Nakama.checkPause) {
         Nakama.timer.pause();
         Nakama.music.stop();
+        Nakama.missileSound.stop();
     } else {
         Nakama.timer.resume();
         Nakama.music.play();
+        Nakama.missileSound.volume = 0;
+        Nakama.missileSound.play();
     }
 }
