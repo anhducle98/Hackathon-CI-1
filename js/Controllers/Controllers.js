@@ -16,7 +16,7 @@ class Controllers {
         this.WOBBLE_LIMIT = configs.WOBBLE_LIMIT; // degrees
         this.WOBBLE_SPEED = configs.WOBBLE_SPEED; // milliseconds
         this.wobble = this.WOBBLE_LIMIT;
-        Nakama.game.add.tween(this)
+        Global.game.add.tween(this)
         .to(
             { wobble: -this.WOBBLE_LIMIT },
             this.WOBBLE_SPEED, Phaser.Easing.Sinusoidal.InOut, true, 0,
@@ -30,15 +30,15 @@ class Controllers {
             this.target.y - this.sprite.y
         );
 
-        var currentAngle = Nakama.game.math.radToDeg(
-            Nakama.game.math.angleBetween(
+        var currentAngle = Global.game.math.radToDeg(
+            Global.game.math.angleBetween(
                 0, 0,
                 this.velocity.x, this.velocity.y
             )
         );
 
-        var directionAngle = Nakama.game.math.radToDeg(
-            Nakama.game.math.angleBetween(
+        var directionAngle = Global.game.math.radToDeg(
+            Global.game.math.angleBetween(
                 0, 0,
                 direction.x, direction.y
             )
@@ -49,7 +49,7 @@ class Controllers {
         if(delta > 180) delta -= 360;
         if(delta < -180) delta += 360;
 
-        var maxDelta = this.configs.turnRate * Nakama.game.time.physicsElapsed;
+        var maxDelta = this.configs.turnRate * Global.game.time.physicsElapsed;
         if(delta > maxDelta) delta = maxDelta;
         if(delta < -maxDelta) delta = -maxDelta;
 
@@ -57,8 +57,8 @@ class Controllers {
         newAngle += this.wobble;
 
         var newDirection = new Phaser.Point(
-            Math.cos(Nakama.game.math.degToRad(newAngle)),
-            Math.sin(Nakama.game.math.degToRad(newAngle))
+            Math.cos(Global.game.math.degToRad(newAngle)),
+            Math.sin(Global.game.math.degToRad(newAngle))
         );
 
         this.velocity = newDirection.setMagnitude(this.configs.speed);

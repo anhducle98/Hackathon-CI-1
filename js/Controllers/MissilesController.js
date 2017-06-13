@@ -5,10 +5,10 @@ class MissilesController extends Controllers {
         if (configs.WOBBLE_LIMIT == 0) {
             missileType = 3;
         }
-        super(x, y, `MissileType${missileType}.png`, Nakama.missileGroup, Nakama.player.sprite, Object.assign(
+        super(x, y, `MissileType${missileType}.png`, Global.missileGroup, Global.player.sprite, Object.assign(
             configs, {
-                speed: Nakama.configs.missile.SPEED,
-                turnRate: Nakama.configs.missile.TURN_RATE
+                speed: Global.configs.missile.SPEED,
+                turnRate: Global.configs.missile.TURN_RATE
             }
         ));
 
@@ -17,7 +17,7 @@ class MissilesController extends Controllers {
         this.lastSmokeTime = 0;
         this.sprite.alpha = 1;
         setTimeout(() => {
-            let tween = Nakama.game.add.tween(this.sprite).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+            let tween = Global.game.add.tween(this.sprite).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
             tween.onComplete.add(() => { tween.stop(); this.sprite.destroy(); }, this);
         }
         ,20000);
@@ -28,7 +28,7 @@ class MissilesController extends Controllers {
         let lastY = this.sprite.y;
         Controllers.prototype.update.call(this, shift);
 
-        this.lastSmokeTime += Nakama.game.time.physicsElapsed;
+        this.lastSmokeTime += Global.game.time.physicsElapsed;
         if (this.lastSmokeTime <= 0.03) {
             return;
         }
