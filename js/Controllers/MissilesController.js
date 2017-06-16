@@ -16,14 +16,19 @@ class MissilesController extends Controllers {
         this.sprite.itemType = "Missile";
         this.lastSmokeTime = 0;
         this.sprite.alpha = 1;
-        setTimeout(() => {
+        this.sprite.health = 1200;
+        this.sprite.events.onKilled.add(() => {
+            if (this.health <= 0) this.sprite.revive();
             let tween = Global.game.add.tween(this.sprite).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+            Global.tweensContainer.push(tween);
             tween.onComplete.add(() => { tween.stop(); this.sprite.destroy(); }, this);
-        }
-        ,20000);
+        }, this);
     }
 
     update(shift) {
+        this.sprite.damage(1);
+        if (this.sprite.health <= 0) return;
+
         let lastX = this.sprite.x;
         let lastY = this.sprite.y;
         Controllers.prototype.update.call(this, shift);

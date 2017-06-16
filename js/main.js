@@ -53,6 +53,9 @@ var preload = function(){
     Global.game.load.audio('Missile', ['Assets/Mp3/missileSound.mp3']);
     Global.game.load.audio('MissileExplosive', ['Assets/Mp3/MissileExplosive.mp3']);
     Global.game.load.audio('PressButtonPlay', ['Assets/Mp3/PressButtonPlay.mp3']);
+
+    Global.pauseKey = Global.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    Global.pauseKey.onDown.add(actionPause, this);
 }
 
 // initialize the game
@@ -77,7 +80,7 @@ var create = function(replay){
     Global.playerGroup = Global.game.add.physicsGroup();
     Global.missileGroup = Global.game.add.physicsGroup();
     Global.explosionGroup = Global.game.add.physicsGroup();
-
+    Global.tweensContainer = [];
     Global.player = new ShipController(Global.game.width/2, Global.game.height/2, {WOBBLE_LIMIT: 0, WOBBLE_SPEED: 0});
 
     Global.health = Global.game.add.sprite(Global.game.width/2, Global.game.height/2, 'assets', 'Shield.png');
@@ -186,6 +189,8 @@ var update = function(){
         Global.timer.pause();
     }
     if (Global.checkPlay) {
+        Global.tweensContainer.filter((it) => it.alive);
+
         if (Global.player.sprite.alive) {
             Global.player.update();
             generateItems();
@@ -455,10 +460,18 @@ var actionPause = function(){
         Global.timer.pause();
         Global.music.stop();
         Global.missileSound.stop();
+        for (let tween of Global.tweensContainer) {
+            tween.pause();
+        }
     } else {
         Global.timer.resume();
         Global.music.play();
         Global.missileSound.volume = 0;
         Global.missileSound.play();
+        for (let tween of Global.tweensContainer) {
+            tween.resume();
+        }
     }
+    //Global.game.physics.arcade.isPaused = (Global.game.physics.arcade.isPaused) ? false : true;
+
 }

@@ -7,5 +7,6 @@ class Smoke {
         tween.onComplete.add(() => {
             this.sprite.destroy();
         }, this);
+        Global.tweensContainer.push(tween);
     }
 };

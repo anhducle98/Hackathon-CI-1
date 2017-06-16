@@ -16,12 +16,13 @@ class Controllers {
         this.WOBBLE_LIMIT = configs.WOBBLE_LIMIT; // degrees
         this.WOBBLE_SPEED = configs.WOBBLE_SPEED; // milliseconds
         this.wobble = this.WOBBLE_LIMIT;
-        Global.game.add.tween(this)
+        let tween = Global.game.add.tween(this)
         .to(
             { wobble: -this.WOBBLE_LIMIT },
             this.WOBBLE_SPEED, Phaser.Easing.Sinusoidal.InOut, true, 0,
             Number.POSITIVE_INFINITY, true
         );
+        Global.tweensContainer.push(tween);
     }
 
     update(shift) {
