@@ -1,7 +1,6 @@
-# EmptyGame
+# Missiles! HTML5 Game
 
-Usage:
+Run server:
 
 npm install
-
 gulp
