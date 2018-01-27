@@ -2,5 +2,5 @@
 
 Run server:
 
-npm install
-gulp
+$ npm install
+$ node index
