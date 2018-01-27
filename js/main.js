@@ -36,7 +36,7 @@ var preload = function(){
     Global.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
     Global.game.time.advancedTiming = true;
-
+    Global.game.load.crossOrigin = 'anonymous';
     Global.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
     Global.game.load.image('smoke', 'Assets/rocket.png');
     Global.game.load.image('background', 'Assets/backgroundNew.png');
