@@ -1,7 +1,10 @@
 # Missiles! HTML5 Game
 
-Run server:
+[Demo video](https://youtu.be/5cp1djIv49I)
+[Play now!](https://missiles-web.herokuapp.com/)
+
+# Installation
 
 $ npm install
 
-$ node index
+$ npm start
