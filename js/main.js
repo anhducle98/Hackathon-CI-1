@@ -60,7 +60,7 @@ var preload = function(){
 
 // initialize the game
 var create = function(replay){
-    Global.music = Global.game.add.audio('AirPlaneType1');
+    if (!(replay == true)) Global.music = Global.game.add.audio('AirPlaneType1');
     Global.music.play();
     Global.music.loopFull(1);
     Global.missileSound = Global.game.add.audio('Missile');
